@@ -3,21 +3,25 @@ using UnityEngine;
 public class Transparente : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject personaje;
+    public SkinnedMeshRenderer mr;
+    Material myMaterial;
     public bool Transparent = false;
 
     // Use this for initialization
     void Start()
     {
-
+      
+      myMaterial = mr.material;
     }
 
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.Alpha1) && !Transparent){
-            // personaje.material.color = new Color(1, 1, 1, 0.3f);
+            myMaterial.color = new Color(1, 1, 1, 0.3f);
+            Transparent = true;
         }else if(Input.GetKeyDown(KeyCode.Alpha1) && Transparent){
-            // personaje.GetComponent<>().material.color = new Color(1, 1, 1, 1f);
+            myMaterial.color = new Color(1, 1, 1, 1f);
+            Transparent = false;
         }
     }
 
