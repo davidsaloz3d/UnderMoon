@@ -3,7 +3,8 @@ using UnityEngine;
 public class Transparente : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public SkinnedMeshRenderer mr;
+    public SkinnedMeshRenderer[] mr;
+    int piezas = 0;
     Material myMaterial;
     public bool Transparent = false;
 
@@ -11,7 +12,9 @@ public class Transparente : MonoBehaviour
     void Start()
     {
       
-      myMaterial = mr.material;
+      for(piezas = 0; piezas < mr.Length; piezas++){
+                myMaterial = mr[piezas].material;
+            }
     }
 
     public void Update()
