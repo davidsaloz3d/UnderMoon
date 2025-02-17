@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - obstaculo
+  - Tunel
   layers:
   - Default
   - TransparentFX
