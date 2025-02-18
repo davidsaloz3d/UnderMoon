@@ -6,6 +6,12 @@ public class MecanicasUnificadas : MonoBehaviour
 {
     private float tiempoRestante = 0f;
 
+    private float VolverAVolar = 0f;
+    private float VolverAAtravesar = 0f;
+    private float VolverAMinimizar = 0f;
+    private float VolverAInvisible = 0f;
+
+
     bool pasandoTunel = false;
 
     [Header("HUD")]
@@ -22,7 +28,7 @@ public class MecanicasUnificadas : MonoBehaviour
     [SerializeField] GameObject Vuelo;
     [SerializeField] GameObject Trans;
 
-    //Varoables para hacerse pequeño
+    //Variables para hacerse pequeño
     [Header("Enano")]
     public bool enano = false;
     private Vector3 originalScale;
@@ -32,7 +38,7 @@ public class MecanicasUnificadas : MonoBehaviour
 
     //Variables para volar
     [Header("Vuelo")]
-    public static bool vuelo = false;
+    public bool vuelo = false;
 
     //Variables para hacerse invisible
     [Header("Invisible")]
@@ -72,7 +78,8 @@ public class MecanicasUnificadas : MonoBehaviour
             vuelo = true;
             ThirdPersonController.JumpHeight = 4f;
             ThirdPersonController.Gravity = -0.5f;
-            tiempoRestante = 20f;
+            tiempoRestante = 15f;
+            VolverAVolar = 30f;
         }
 
         //Transparente
@@ -90,7 +97,8 @@ public class MecanicasUnificadas : MonoBehaviour
             Dientes.SetActive(false);
             Ojos.SetActive(false);
             Lengua.SetActive(false);
-            tiempoRestante = 20f;
+            tiempoRestante = 15f;
+            VolverAInvisible = 30f;
         }
 
         //Enano
@@ -104,6 +112,7 @@ public class MecanicasUnificadas : MonoBehaviour
             transform.localScale = Vector3.MoveTowards(transform.localScale, finalScale, scaleSpeed * Time.deltaTime);
             ThirdPersonController.JumpHeight = 0.7f;
             tiempoRestante = 20f;
+            VolverAMinimizar = 30f;
             if (transform.localScale == finalScale)
             {
                 enano = true;
@@ -120,7 +129,8 @@ public class MecanicasUnificadas : MonoBehaviour
                 obj[nObjetos].isTrigger = true;
             }
             atraviesa = true;
-            tiempoRestante = 20f;
+            tiempoRestante = 15f;
+            VolverAAtravesar = 30f;
         }
 
         //Volver despues de vuelo
@@ -133,9 +143,15 @@ public class MecanicasUnificadas : MonoBehaviour
             {
                 ThirdPersonController.JumpHeight = 1.3f;
                 ThirdPersonController.Gravity = -15f;
-                vuelo = false;
                 Vuelo.SetActive(false);
                 tiempoRestante = 0;
+                VolverAVolar -= Time.deltaTime;
+                Debug.Log(VolverAVolar);
+                if (VolverAVolar <= 0)
+                {
+                    VolverAVolar = 0f;
+                    vuelo = false;
+                }
             }
         }
 
@@ -158,9 +174,14 @@ public class MecanicasUnificadas : MonoBehaviour
                 Dientes.SetActive(true);
                 Ojos.SetActive(true);
                 Lengua.SetActive(true);
-                trans = false;
                 Trans.SetActive(false);
                 tiempoRestante = 0;
+                VolverAInvisible -= Time.deltaTime;
+                if (VolverAInvisible <= 0)
+                {
+                    VolverAInvisible = 0f;
+                    trans = false;
+                }
             }
         }
 
@@ -176,10 +197,15 @@ public class MecanicasUnificadas : MonoBehaviour
                 transform.localScale = Vector3.MoveTowards(transform.localScale, originalScale, scaleSpeed * Time.deltaTime);
                 if (transform.localScale == originalScale)
                 {
-                    enano = false;
                     pulsado = false;
                     Enano.SetActive(false);
                     tiempoRestante = 0;
+                    VolverAMinimizar -= Time.deltaTime;
+                    if (VolverAMinimizar <= 0)
+                    {
+                        VolverAMinimizar = 0f;
+                        enano = false;
+                    }
                 }
 
 
@@ -198,9 +224,13 @@ public class MecanicasUnificadas : MonoBehaviour
                 {
                     obj[nObjetos].isTrigger = false;
                 }
-                atraviesa = false;
                 Atraviesa.SetActive(false);
                 tiempoRestante = 0;
+                VolverAAtravesar -= Time.deltaTime;
+                if(VolverAAtravesar <= 0){
+                    VolverAAtravesar = 0f;
+                    atraviesa = false;
+                }
             }
         }
 

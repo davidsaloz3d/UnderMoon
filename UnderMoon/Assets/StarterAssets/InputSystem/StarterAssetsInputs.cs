@@ -41,7 +41,7 @@ namespace StarterAssets
 
 		public void OnSprint(InputValue value)
 		{
-			if(!Salto.salto){
+			if(!ThirdPersonController.saltando){
 				SprintInput(value.isPressed);
 			}
 			

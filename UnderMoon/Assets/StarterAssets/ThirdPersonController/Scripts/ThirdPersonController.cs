@@ -98,6 +98,7 @@ namespace StarterAssets
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
 
+        public static bool saltando = false;
 #if ENABLE_INPUT_SYSTEM 
         private PlayerInput _playerInput;
 #endif
@@ -285,7 +286,7 @@ namespace StarterAssets
             {
                 // reset the fall timeout timer
                 _fallTimeoutDelta = FallTimeout;
-
+                saltando = false;
                 // update animator if using character
                 if (_hasAnimator)
                 {
@@ -304,7 +305,7 @@ namespace StarterAssets
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-
+                    saltando = true;
                     // update animator if using character
                     if (_hasAnimator)
                     {
@@ -315,6 +316,7 @@ namespace StarterAssets
                 // jump timeout
                 if (_jumpTimeoutDelta >= 0.0f)
                 {
+                    saltando = false;
                     _jumpTimeoutDelta -= Time.deltaTime;
                 }
             }
@@ -322,7 +324,7 @@ namespace StarterAssets
             {
                 // reset the jump timeout timer
                 _jumpTimeoutDelta = JumpTimeout;
-
+                
                 // fall timeout
                 if (_fallTimeoutDelta >= 0.0f)
                 {
