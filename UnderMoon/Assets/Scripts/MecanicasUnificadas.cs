@@ -7,9 +7,13 @@ public class MecanicasUnificadas : MonoBehaviour
     private float tiempoRestante = 0f;
 
     private float VolverAVolar = 0f;
+    bool activaCronoV = false;
     private float VolverAAtravesar = 0f;
+    bool activaCronoA = false;
     private float VolverAMinimizar = 0f;
+    bool activaCronoM = false;
     private float VolverAInvisible = 0f;
+    bool activaCronoI = false;
 
 
     bool pasandoTunel = false;
@@ -73,7 +77,7 @@ public class MecanicasUnificadas : MonoBehaviour
     {
 
         //Vuelo
-        if (Input.GetKeyDown(KeyCode.Alpha1) && !vuelo && tiempoRestante == 0)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !vuelo && tiempoRestante == 0 && VolverAVolar == 0)
         {
             vuelo = true;
             ThirdPersonController.JumpHeight = 4f;
@@ -83,7 +87,7 @@ public class MecanicasUnificadas : MonoBehaviour
         }
 
         //Transparente
-        if (Input.GetKeyDown(KeyCode.Alpha2) && !trans && tiempoRestante == 0)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !trans && tiempoRestante == 0 && VolverAInvisible == 0)
         {
             trans = true;
             sinBody.SetActive(true);
@@ -102,7 +106,7 @@ public class MecanicasUnificadas : MonoBehaviour
         }
 
         //Enano
-        if (Input.GetKeyDown(KeyCode.Alpha3) && !enano && tiempoRestante == 0)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && !enano && tiempoRestante == 0 && VolverAMinimizar == 0)
         {
             pulsado = true;
         }
@@ -122,7 +126,7 @@ public class MecanicasUnificadas : MonoBehaviour
 
 
         //Atravesar
-        if (Input.GetKeyDown(KeyCode.Alpha4) && !atraviesa && tiempoRestante == 0)
+        if (Input.GetKeyDown(KeyCode.Alpha4) && !atraviesa && tiempoRestante == 0 && VolverAAtravesar == 0)
         {
             for (nObjetos = 0; nObjetos < obj.Length; nObjetos++)
             {
@@ -144,14 +148,21 @@ public class MecanicasUnificadas : MonoBehaviour
                 ThirdPersonController.JumpHeight = 1.3f;
                 ThirdPersonController.Gravity = -15f;
                 Vuelo.SetActive(false);
+                vuelo = false;
                 tiempoRestante = 0;
-                VolverAVolar -= Time.deltaTime;
-                Debug.Log(VolverAVolar);
-                if (VolverAVolar <= 0)
-                {
-                    VolverAVolar = 0f;
-                    vuelo = false;
-                }
+                activaCronoV = true;
+            }
+        }
+
+        //Tiempo restante hasta que se puede volver a usar el poder de volar
+        if (activaCronoV)
+        {
+            VolverAVolar -= Time.deltaTime;
+            Debug.Log(VolverAVolar);
+            if (VolverAVolar <= 0)
+            {
+                VolverAVolar = 0f;
+                activaCronoV = false;
             }
         }
 
@@ -176,12 +187,19 @@ public class MecanicasUnificadas : MonoBehaviour
                 Lengua.SetActive(true);
                 Trans.SetActive(false);
                 tiempoRestante = 0;
-                VolverAInvisible -= Time.deltaTime;
-                if (VolverAInvisible <= 0)
-                {
-                    VolverAInvisible = 0f;
-                    trans = false;
-                }
+                trans = false;
+                activaCronoI = true;
+            }
+        }
+
+        //Tiempo restante hasta que se puede volver a usar el poder de invisibilidad
+        if (activaCronoI)
+        {
+            VolverAInvisible -= Time.deltaTime;
+            if (VolverAInvisible <= 0)
+            {
+                VolverAInvisible = 0f;
+                activaCronoI = false;
             }
         }
 
@@ -200,15 +218,22 @@ public class MecanicasUnificadas : MonoBehaviour
                     pulsado = false;
                     Enano.SetActive(false);
                     tiempoRestante = 0;
-                    VolverAMinimizar -= Time.deltaTime;
-                    if (VolverAMinimizar <= 0)
-                    {
-                        VolverAMinimizar = 0f;
-                        enano = false;
-                    }
+                    enano = false;
+                    activaCronoM = true;
                 }
 
 
+            }
+        }
+
+        //Tiempo restante hasta que se puede volver a usar el poder de encoger
+        if (activaCronoM)
+        {
+            VolverAMinimizar -= Time.deltaTime;
+            if (VolverAMinimizar <= 0)
+            {
+                VolverAMinimizar = 0f;
+                activaCronoM = false;
             }
         }
 
@@ -226,11 +251,19 @@ public class MecanicasUnificadas : MonoBehaviour
                 }
                 Atraviesa.SetActive(false);
                 tiempoRestante = 0;
-                VolverAAtravesar -= Time.deltaTime;
-                if(VolverAAtravesar <= 0){
-                    VolverAAtravesar = 0f;
-                    atraviesa = false;
-                }
+                atraviesa = false;
+                activaCronoA = true;
+            }
+        }
+
+        //Tiempo restante hasta que se puede volver a usar el poder de atravesar
+        if (activaCronoA)
+        {
+            VolverAAtravesar -= Time.deltaTime;
+            if (VolverAAtravesar <= 0)
+            {
+                VolverAAtravesar = 0f;
+                activaCronoA = false;
             }
         }
 
