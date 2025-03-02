@@ -1,5 +1,7 @@
 using StarterAssets;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MecanicasUnificadas : MonoBehaviour
@@ -31,6 +33,7 @@ public class MecanicasUnificadas : MonoBehaviour
     [SerializeField] GameObject Enano;
     [SerializeField] GameObject Vuelo;
     [SerializeField] GameObject Trans;
+
 
     //Variables para hacerse pequeño
     [Header("Enano")]
@@ -65,11 +68,16 @@ public class MecanicasUnificadas : MonoBehaviour
     public bool atravesando = false;
     int nObjetos = 0;
     [SerializeField] Collider[] obj;
+
+    ThirdPersonController Player;
+    [SerializeField] Animator anim;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         originalScale = transform.localScale;
         finalScale = originalScale * 0.25f;
+        Player = GetComponent <ThirdPersonController>();
     }
 
     // Update is called once per frame
@@ -294,5 +302,17 @@ public class MecanicasUnificadas : MonoBehaviour
             other.isTrigger = false;
             atravesando = false;
         }
+
+        if (other.CompareTag("Stop"))
+        {
+            Player.GetComponent<ThirdPersonController>().MoveSpeed =0;
+            anim.SetTrigger("Lose");
+            Invoke("Reini",2);
+        }
+    }
+
+    public void Reini(){
+
+        SceneManager.LoadScene("Escenario");
     }
 }

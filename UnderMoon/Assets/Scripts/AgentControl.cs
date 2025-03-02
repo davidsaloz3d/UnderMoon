@@ -16,6 +16,10 @@ public class AgentControl : MonoBehaviour
 
     [SerializeField] Animator anim;
 
+    [SerializeField] GameObject Alto;
+
+    
+
 
     float distance;
     float ataque;
@@ -28,6 +32,7 @@ public class AgentControl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
       
         agent.destination = path[goal].transform.position;
+        
 
     }
 
@@ -52,13 +57,13 @@ public class AgentControl : MonoBehaviour
         if(distance<= visionAtaque){
              //transform.LookAt(player.transform.position);
             anim.SetBool("Bite", true);
-            Perro.GetComponent<NavMeshAgent>().speed = 0.2f;
+            Perro.GetComponent<NavMeshAgent>().speed = 0f;
             
             
         }
         else{
             anim.SetBool("Bite", false);
-            Perro.GetComponent<NavMeshAgent>().speed = 3.5f;
+            
 
         }
 
@@ -73,14 +78,21 @@ public class AgentControl : MonoBehaviour
         if(Siguiendo == true){
 
             anim.SetBool("Corriendo", true);
+            //Perro.GetComponent<NavMeshAgent>().speed = 3.5f;
         }
 
         else{
 
             anim.SetBool("Corriendo", false);
+            //Perro.GetComponent<NavMeshAgent>().speed = 2f;
         }
 
 
    
+}
+
+public void Stop(){
+
+    Alto.SetActive(true);
 }
 }
