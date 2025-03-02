@@ -288,6 +288,13 @@ public class MecanicasUnificadas : MonoBehaviour
         {
             atravesando = true;
         }
+
+        if (other.CompareTag("Stop"))
+        {
+            Player.GetComponent<ThirdPersonController>().MoveSpeed =0;
+            anim.SetTrigger("Lose");
+            Invoke("Reini",2);
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -302,13 +309,7 @@ public class MecanicasUnificadas : MonoBehaviour
             other.isTrigger = false;
             atravesando = false;
         }
-
-        if (other.CompareTag("Stop"))
-        {
-            Player.GetComponent<ThirdPersonController>().MoveSpeed =0;
-            anim.SetTrigger("Lose");
-            Invoke("Reini",2);
-        }
+        
     }
 
     public void Reini(){
