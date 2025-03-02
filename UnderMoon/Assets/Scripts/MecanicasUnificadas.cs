@@ -60,7 +60,7 @@ public class MecanicasUnificadas : MonoBehaviour
     [SerializeField] GameObject sinPelo;
     [SerializeField] GameObject conPant;
     [SerializeField] GameObject sinPant;
-    public bool trans = false;
+    public static bool trans = false;
 
     //Variables para atravesar
     [Header("Atravesar")]
@@ -75,9 +75,10 @@ public class MecanicasUnificadas : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        trans = false;
         originalScale = transform.localScale;
         finalScale = originalScale * 0.25f;
-        Player = GetComponent <ThirdPersonController>();
+        Player = GetComponent<ThirdPersonController>();
     }
 
     // Update is called once per frame
@@ -289,11 +290,14 @@ public class MecanicasUnificadas : MonoBehaviour
             atravesando = true;
         }
 
-        if (other.CompareTag("Stop"))
+        if (!trans)
         {
-            Player.GetComponent<ThirdPersonController>().MoveSpeed =0;
-            anim.SetTrigger("Lose");
-            Invoke("Reini",2);
+            if (other.CompareTag("Stop"))
+            {
+                Player.GetComponent<ThirdPersonController>().MoveSpeed = 0;
+                anim.SetTrigger("Lose");
+                Invoke("Reini", 2);
+            }
         }
     }
 
@@ -309,10 +313,11 @@ public class MecanicasUnificadas : MonoBehaviour
             other.isTrigger = false;
             atravesando = false;
         }
-        
+
     }
 
-    public void Reini(){
+    public void Reini()
+    {
 
         SceneManager.LoadScene("Escenario");
     }
