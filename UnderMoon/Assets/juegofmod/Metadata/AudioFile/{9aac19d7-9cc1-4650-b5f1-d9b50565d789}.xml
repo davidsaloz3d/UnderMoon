@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{9aac19d7-9cc1-4650-b5f1-d9b50565d789}">
+		<property name="assetPath">
+			<value>pistas-008.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>30.967732426303854</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f68e4a06-f3ac-44ea-816b-f2322e76c026}</destination>
+		</relationship>
+	</object>
+</objects>
