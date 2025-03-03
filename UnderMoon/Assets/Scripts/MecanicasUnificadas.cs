@@ -78,7 +78,6 @@ public class MecanicasUnificadas : MonoBehaviour
     [SerializeField] GameObject Fmod;
 
 
-    [SerializeField] GameObject menuPausa;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -93,10 +92,7 @@ public class MecanicasUnificadas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            menuPausa.SetActive(true);
-            Time.timeScale=0;
-        }
+        
 
         //Vuelo
         if (Input.GetKeyDown(KeyCode.Alpha1) && !vuelo && tiempoRestante == 0 && VolverAVolar == 0)
