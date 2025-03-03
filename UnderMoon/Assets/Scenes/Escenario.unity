@@ -7013,7 +7013,7 @@ PrefabInstance:
       objectReference: {fileID: 1394316456}
     - target: {fileID: 8226357180763029434, guid: 3ebabdcf2a6230e46807ea249a2d458e, type: 3}
       propertyPath: obj.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8226357180763029434, guid: 3ebabdcf2a6230e46807ea249a2d458e, type: 3}
       propertyPath: tiempoAtraviesa
@@ -7023,6 +7023,18 @@ PrefabInstance:
       propertyPath: tiempoInvisible
       value: 
       objectReference: {fileID: 2000091279}
+    - target: {fileID: 8226357180763029434, guid: 3ebabdcf2a6230e46807ea249a2d458e, type: 3}
+      propertyPath: 'obj.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1949669214}
+    - target: {fileID: 8226357180763029434, guid: 3ebabdcf2a6230e46807ea249a2d458e, type: 3}
+      propertyPath: 'obj.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2123161064}
+    - target: {fileID: 8226357180763029434, guid: 3ebabdcf2a6230e46807ea249a2d458e, type: 3}
+      propertyPath: 'obj.Array.data[2]'
+      value: 
+      objectReference: {fileID: 69530122}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -26888,7 +26900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &795500990
 MonoBehaviour:
   m_ObjectHideFlags: 0
