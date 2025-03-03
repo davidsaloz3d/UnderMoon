@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3358300}
   - component: {fileID: 2344208}
   - component: {fileID: 8746062817701961515}
+  - component: {fileID: 1307392050034908378}
   m_Layer: 0
   m_Name: terraced4am
   m_TagString: Untagged
@@ -106,5 +107,26 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8, y: 11.355008, z: 9.239493}
-  m_Center: {x: 0, y: 5.677504, z: 0.46278286}
+  m_Size: {x: 8, y: 18.569803, z: 8.194341}
+  m_Center: {x: 0, y: 9.284902, z: -0.059792995}
+--- !u!65 &1307392050034908378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179726}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.880879, y: 18.535095, z: 9.239493}
+  m_Center: {x: -1.5595605, y: 9.267548, z: 0.46278286}

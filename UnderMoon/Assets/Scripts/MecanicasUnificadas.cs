@@ -8,6 +8,8 @@ public class MecanicasUnificadas : MonoBehaviour
 {
     private float tiempoRestante = 0f;
 
+    public static bool llorar = false;
+
     private float VolverAVolar = 0f;
     bool activaCronoV = false;
     private float VolverAAtravesar = 0f;
@@ -75,10 +77,14 @@ public class MecanicasUnificadas : MonoBehaviour
 
     [SerializeField] GameObject Fmod;
 
+
+    [SerializeField] GameObject menuPausa;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         trans = false;
+        llorar = false;
         originalScale = transform.localScale;
         finalScale = originalScale * 0.25f;
         Player = GetComponent<ThirdPersonController>();
@@ -87,6 +93,10 @@ public class MecanicasUnificadas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            menuPausa.SetActive(true);
+            Time.timeScale=0;
+        }
 
         //Vuelo
         if (Input.GetKeyDown(KeyCode.Alpha1) && !vuelo && tiempoRestante == 0 && VolverAVolar == 0)
@@ -297,7 +307,7 @@ public class MecanicasUnificadas : MonoBehaviour
         {
             if (other.CompareTag("Stop"))
             {
-                Player.GetComponent<ThirdPersonController>().MoveSpeed = 0;
+                llorar = true;
                 anim.SetTrigger("Lose");
                 Invoke("Reini", 2);
             }
