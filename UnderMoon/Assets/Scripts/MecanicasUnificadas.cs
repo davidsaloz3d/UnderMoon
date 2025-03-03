@@ -73,6 +73,8 @@ public class MecanicasUnificadas : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] GameObject WinerHUD;
 
+    [SerializeField] GameObject Fmod;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -304,6 +306,7 @@ public class MecanicasUnificadas : MonoBehaviour
         if(other.CompareTag("Win")){
 
             WinerHUD.SetActive(true);
+            Invoke("Winer",3);
         }
     }
 
@@ -324,6 +327,6 @@ public class MecanicasUnificadas : MonoBehaviour
     public void Winer()
     {
 
-        SceneManager.LoadScene("Creditos");
+        SceneManager.LoadScene("Credits");
     }
 }
