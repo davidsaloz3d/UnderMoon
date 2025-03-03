@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5961667854200821801
+--- !u!114 &-405581737013378146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Build/Desktop/Master.strings.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: juegofmodfin/Build/Desktop/Master.strings.bank
-  Name: Build/Desktop/Master.strings
+  Path: Assets/juegofmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638765975140000000
+  lastModified: 638765975135363747
   FileSizes:
   - Name: 
     Value: 792
@@ -33,17 +33,35 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -5961667854200821801}
-  - {fileID: 8327569292944077586}
+  - {fileID: -405581737013378146}
+  - {fileID: 1732997556975411788}
   EditorEvents:
   - {fileID: 6537098215689964222}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8327569292944077586}
+  - {fileID: 1732997556975411788}
   StringsBanks:
-  - {fileID: -5961667854200821801}
-  cacheTime: 638765975140000000
+  - {fileID: -405581737013378146}
+  cacheTime: 638765975135363747
   cacheVersion: 131846
+--- !u!114 &1732997556975411788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/juegofmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638765975135334236
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3106956012099260648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +105,7 @@ MonoBehaviour:
     Data3: -1993398353
     Data4: -1677837418
   Banks:
-  - {fileID: 8327569292944077586}
+  - {fileID: 1732997556975411788}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -96,21 +114,3 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 30967
---- !u!114 &8327569292944077586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Build/Desktop/Master.bank
-  m_EditorClassIdentifier: 
-  Path: juegofmodfin/Build/Desktop/Master.bank
-  Name: Build/Desktop/Master
-  StudioPath: bank:/Master
-  lastModified: 638765975140000000
-  FileSizes: []
-  Exists: 1
