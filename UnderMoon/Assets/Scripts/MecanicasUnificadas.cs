@@ -71,6 +71,7 @@ public class MecanicasUnificadas : MonoBehaviour
 
     ThirdPersonController Player;
     [SerializeField] Animator anim;
+    [SerializeField] GameObject WinerHUD;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -167,7 +168,7 @@ public class MecanicasUnificadas : MonoBehaviour
         if (activaCronoV)
         {
             VolverAVolar -= Time.deltaTime;
-            Debug.Log(VolverAVolar);
+            //Debug.Log(VolverAVolar);
             if (VolverAVolar <= 0)
             {
                 VolverAVolar = 0f;
@@ -299,11 +300,30 @@ public class MecanicasUnificadas : MonoBehaviour
                 Invoke("Reini", 2);
             }
         }
+
+        if(other.CompareTag("Win")){
+
+            WinerHUD.SetActive(true);
+        }
+    }
+
+    void OnTriggerExit (Collider other){
+
+        if (other.CompareTag("Tunel")){
+
+            pasandoTunel = false;
+        }
     }
 
     public void Reini()
     {
 
         SceneManager.LoadScene("Escenario");
+    }
+
+    public void Winer()
+    {
+
+        SceneManager.LoadScene("Creditos");
     }
 }
