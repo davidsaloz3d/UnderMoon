@@ -322,6 +322,11 @@ public class MecanicasUnificadas : MonoBehaviour
 
             pasandoTunel = false;
         }
+
+        if(other.gameObject.CompareTag("obstaculo")){
+
+            atravesando = false;
+        }
     }
 
     public void Reini()
