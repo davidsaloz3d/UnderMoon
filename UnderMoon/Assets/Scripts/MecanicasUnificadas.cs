@@ -301,21 +301,6 @@ public class MecanicasUnificadas : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Tunel"))
-        {
-            pasandoTunel = false;
-        }
-
-        if (other.CompareTag("obstaculo"))
-        {
-            other.isTrigger = false;
-            atravesando = false;
-        }
-
-    }
-
     public void Reini()
     {
 
