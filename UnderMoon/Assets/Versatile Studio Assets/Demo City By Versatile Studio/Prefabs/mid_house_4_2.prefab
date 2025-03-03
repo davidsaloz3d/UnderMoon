@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1832282261393328714}
   - component: {fileID: 2868213344546003144}
+  - component: {fileID: 5889763002480261848}
   m_Layer: 0
   m_Name: Area Light
   m_TagString: Untagged
@@ -97,6 +98,29 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &5889763002480261848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560967514057547894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &4569004353641021200
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +133,10 @@ GameObject:
   - component: {fileID: 255674358142544399}
   - component: {fileID: 2623524013515988677}
   - component: {fileID: 1457140624596724541}
+  - component: {fileID: 3001284238008103518}
+  - component: {fileID: 4658300092440877514}
+  - component: {fileID: 5654122965362187077}
+  - component: {fileID: 3963773818820388444}
   m_Layer: 0
   m_Name: mid_house_4_2
   m_TagString: Untagged
@@ -206,10 +234,94 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 14.102798, y: 18.78542, z: 10.066168}
+  m_Center: {x: 0.010063171, y: 8.392693, z: 0.015281677}
+--- !u!65 &3001284238008103518
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4569004353641021200}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 15.0000305, y: 6.5000315, z: 10.079727}
-  m_Center: {x: 0.5, y: 2.2500005, z: 0.15554714}
+  m_Size: {x: 2.7498236, y: 1.0412713, z: 1.0080109}
+  m_Center: {x: -4.2059665, y: -0.47938007, z: 5.496011}
+--- !u!65 &4658300092440877514
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4569004353641021200}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.727827, y: 0.98992455, z: 2.9712029}
+  m_Center: {x: 4.254718, y: -0.50505275, z: -6.514413}
+--- !u!65 &5654122965362187077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4569004353641021200}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.727827, y: 0.98992455, z: 2.9712029}
+  m_Center: {x: -1.11, y: -0.50505275, z: -6.514413}
+--- !u!65 &3963773818820388444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4569004353641021200}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1244497, y: 0.5761305, z: 1.2094183}
+  m_Center: {x: 7.4377904, y: -0.71194977, z: -3.509479}
 --- !u!1 &5815109188874183097
 GameObject:
   m_ObjectHideFlags: 0
