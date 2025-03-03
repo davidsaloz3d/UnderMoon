@@ -33,4 +33,9 @@ public class Menu : MonoBehaviour
 
         Application.Quit();
     }
+
+    public void Tuto(){
+
+        SceneManager.LoadScene("Tuto");
+    }
 }
